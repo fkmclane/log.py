@@ -9,7 +9,7 @@ version = "0.0a0"
 
 
 class Log(object):
-    def __init__(self, log):
+    def __init__(self, log=None):
         if log:
             os.makedirs(os.path.dirname(log), exist_ok=True)
             self.log = open(log, 'a', 1)
@@ -44,7 +44,7 @@ class Log(object):
 
 
 class HTTPLog(Log):
-    def __init__(self, log, access_log):
+    def __init__(self, log=None, access_log=None):
         Log.__init__(self, log)
 
         if access_log:
